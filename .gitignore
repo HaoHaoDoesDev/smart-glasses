@@ -1,0 +1,28 @@
+# --- Backend / Go Specific ---
+# Binaries and Plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+# Ignore any file named 'main' or 'api' inside any 'backend' folder
+**/backend/main
+**/backend/api
+**/backend/backend_app
+
+# --- Frontend / React Native Specific ---
+node_modules/
+.expo/
+dist/
+npm-debug.*
+yarn-error.*
+
+# --- Security (The most important part) ---
+**/.env
+**/.env.local
+**/.env.template
+.env*.local
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db

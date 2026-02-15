@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  ai:
+    build:
+      context: ./backend
+      dockerfile: auth/Dockerfile
+    container_name: auth
+    restart: on-failure
+    ports:
+      - "8086:8086"
+    environment:
+      PORT: "8086"
+      SUPABASE_URL: "${SUPABASE_URL}"
+      SUPABASE_ANON_KEY: "${SUPABASE_ANON_KEY}"
+      SUPABASE_SERVICE_ROLE_KEY: "${SUPABASE_SERVICE_ROLE_KEY}"
+
+  audio:
+    build:
+      context: ./backend
+      dockerfile: audio/Dockerfile
+    container_name: audio
+    restart: on-failure
+    ports:
+      - "8085:8085"
+    environment:
+      PORT: "8085"
+      SUPABASE_URL: "${SUPABASE_URL}"
+      SUPABASE_ANON_KEY: "${SUPABASE_ANON_KEY}"
+      SUPABASE_SERVICE_ROLE_KEY: "${SUPABASE_SERVICE_ROLE_KEY}"
+
+  video:
+    build:
+      context: ./backend
+      dockerfile: video/Dockerfile
+    container_name: video
+    restart: on-failure
+    ports:
+      - "8084:8084"
+    environment:
+      PORT: "8084"
+      SUPABASE_URL: "${SUPABASE_URL}"
+      SUPABASE_ANON_KEY: "${SUPABASE_ANON_KEY}"
+      SUPABASE_SERVICE_ROLE_KEY: "${SUPABASE_SERVICE_ROLE_KEY}"
