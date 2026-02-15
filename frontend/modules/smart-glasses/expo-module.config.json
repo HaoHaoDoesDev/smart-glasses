@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["SmartGlassesModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.smartglasses.SmartGlassesModule"]
+  }
+}
